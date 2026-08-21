@@ -1,8 +1,8 @@
 public class Exame {
     
-    public String consulta;
-    public String data;
-    public String descritivo;
+    private Consulta consulta;
+    private String data;
+    private String descritivo;
     
     public void solicitar(){
         System.out.println("Solicitando Exame");
@@ -14,5 +14,33 @@ public class Exame {
         System.out.println("Data: " + data);
         System.out.println("Descritivo: " + descritivo + "\n");
     }
+
+    
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public String getDescritivo() {
+        return descritivo;
+    }
+
+    public void setDescritivo(String descritivo) {
+        this.descritivo = descritivo;
+    }
+
+    public Consulta getConsulta() {
+        return consulta;
+    }
+
+    public void setConsulta(Consulta consulta) {
+        this.consulta = consulta;
+    }
+
+    
 
 }

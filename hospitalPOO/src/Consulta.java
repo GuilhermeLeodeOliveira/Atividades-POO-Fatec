@@ -1,10 +1,10 @@
 public class Consulta {
-    public String data;
-    public String hora;
-    public String medico;
-    public String paciente;
-    public String motivo;
-    public String historico;
+    private String data;
+    private String hora;
+    private Medico medico;
+    private Paciente paciente;
+    private String motivo;
+    private String historico;
 
     public void marcar(){
         System.out.println("Marcando Consulta");
@@ -31,4 +31,57 @@ public class Consulta {
     public void atualizar(){
         System.out.println("Atualizando Consulta");
     }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public String getHora() {
+        return hora;
+    }
+
+    public void setHora(String hora) {
+        this.hora = hora;
+    }
+
+    public Medico getMedico() {
+        return medico;
+    }
+
+    public void setMedico(Medico medico) {
+        this.medico = medico;
+    }
+
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
+
+    public String getMotivo() {
+        return motivo;
+    }
+
+    public void setMotivo(String motivo) {
+        this.motivo = motivo;
+    }
+
+    public String getHistorico() {
+        return historico;
+    }
+
+    public void setHistorico(String historico) {
+        this.historico = historico;
+    }
+
+    
+
+    
+
 }
