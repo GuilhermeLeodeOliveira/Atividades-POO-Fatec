@@ -5,6 +5,15 @@ public class Paciente {
     private String genero;
     private int idade;
 
+    public Paciente(){}
+
+    public Paciente(String nome, String cpf, String telefone, String genero, int idade){
+        this.nome = nome;
+        this.cpf = cpf;
+        this.telefone = telefone;
+        this.genero = genero;
+        this.idade = idade;
+    }
 
     public void cadastrar(){
         System.out.println("Cadastrando Paciente");

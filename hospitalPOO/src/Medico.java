@@ -5,6 +5,18 @@ public class Medico {
     private String especialidade;
     private String senha;
 
+    public Medico(){}
+
+    public Medico(String nome, String crm, String telefone, String especialidade, String senha) {
+        this.nome = nome;
+        this.crm = crm;
+        this.telefone = telefone;
+        this.especialidade = especialidade;
+        this.senha = senha;
+    }
+
+
+
     public void setSenha(String senha) {
         this.senha = senha;
     }

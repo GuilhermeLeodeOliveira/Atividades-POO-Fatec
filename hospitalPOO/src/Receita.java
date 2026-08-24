@@ -3,6 +3,15 @@ public class Receita {
     private String data;
     private String descritivo;
 
+    public Receita() {
+    }
+
+    public Receita(Consulta consulta, String data, String descritivo) {
+        this.consulta = consulta;
+        this.data = data;
+        this.descritivo = descritivo;
+    }
+
     public void preescrever(){
         System.out.println("Prescrevendo Receita");
     }

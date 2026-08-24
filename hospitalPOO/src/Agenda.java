@@ -4,6 +4,16 @@ public class Agenda {
     private Medico medico;
     private Paciente paciente;
 
+    public Agenda() {
+    }
+
+    public Agenda(String data, String hora, Medico medico, Paciente paciente) {
+        this.data = data;
+        this.hora = hora;
+        this.medico = medico;
+        this.paciente = paciente;
+    }
+
     public void mostrar() {
         System.out.println("--- Agenda ---");
         System.out.println("Data: " + data);

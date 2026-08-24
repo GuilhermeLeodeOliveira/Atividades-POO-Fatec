@@ -4,6 +4,15 @@ public class Exame {
     private String data;
     private String descritivo;
     
+    public Exame(){}
+
+    public Exame(Consulta consulta, String data, String descritivo) {
+        this.consulta = consulta;
+        this.data = data;
+        this.descritivo = descritivo;
+    }
+
+
     public void solicitar(){
         System.out.println("Solicitando Exame");
     }
