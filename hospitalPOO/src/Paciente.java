@@ -1,49 +1,70 @@
 public class Paciente {
+    private int codigo;
     private String nome;
-    private String cpf;
     private String telefone;
-    private String genero;
+    private char genero;
     private int idade;
+    private String email;
+    private String senha;
 
     public Paciente(){}
 
-    public Paciente(String nome, String cpf, String telefone, String genero, int idade){
+    public Paciente(int _codigo, String _nome, String _email, int _idade, char _genero){
+        this.codigo = _codigo;
+        this.nome = _nome;
+        this.email = _email;
+        this.idade = _idade;
+        this.genero = _genero;    
+    }
+    
+ 
+    public Paciente(int codigo, String nome, String telefone, String email, int idade, char genero, String senha) {
         this.nome = nome;
-        this.cpf = cpf;
-        this.telefone = telefone;
-        this.genero = genero;
+        this.email = email;
         this.idade = idade;
+        this.genero = genero;
+        this.senha = senha;
     }
 
-    public void cadastrar(){
+    public void cadastrar(){    
         System.out.println("Cadastrando Paciente");
-        
+        //TODO
         System.out.println("Paciente cadastrado com sucesso");
     }
 
     public void mostrar(){
         System.out.println("--- Paciente ---");
-        System.out.println("Nome: "+nome);
-        System.out.println("CPF:"+cpf);
-        System.out.println("Telefone: "+telefone);
-        System.out.println("Gênero: "+genero);
-        System.out.println("Idade: "+idade + "\n");
+        System.out.println("Nome: "+this.nome);
+        System.out.println("Email: "+this.email);
+        System.out.println("Telefone: "+this.telefone);
+        System.out.println("Idade: "+this.idade + "\n");
     }
 
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome(String nome) throws Exception {
+        if(nome.isBlank()){
+            throw new Exception("nome é obrigatório!");
+        } else {
+            this.nome = nome;
+        }
     }
 
-    public String getCpf() {
-        return cpf;
+    public int getCodigo() {
+        return codigo;
+    }
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public char getGenero() {
+        return genero;
+    }
+
+    public void setGenero(char genero) {
+        this.genero = genero;
     }
 
     public String getTelefone() {
@@ -54,14 +75,6 @@ public class Paciente {
         this.telefone = telefone;
     }
 
-    public String getGenero() {
-        return genero;
-    }
-
-    public void setGenero(String genero) {
-        this.genero = genero;
-    }
-
     public int getIdade() {
         return idade;
     }
@@ -70,7 +83,20 @@ public class Paciente {
         this.idade = idade;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getSenha() {
+        return "*************";
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
     
-
 }
-

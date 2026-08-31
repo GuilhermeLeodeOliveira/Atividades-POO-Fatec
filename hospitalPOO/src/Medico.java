@@ -7,12 +7,12 @@ public class Medico {
 
     public Medico(){}
 
-    public Medico(String nome, String crm, String telefone, String especialidade, String senha) {
-        this.nome = nome;
-        this.crm = crm;
-        this.telefone = telefone;
-        this.especialidade = especialidade;
-        this.senha = senha;
+    public Medico(String nome, String crm, String telefone, String especialidade, String senha) throws Exception {
+        setNome(nome);
+        setCrm(crm);
+        setTelefone(telefone);
+        setEspecialidade(especialidade);
+        setSenha(senha);
     }
 
 
@@ -34,7 +34,10 @@ public class Medico {
         return nome;
     }
 
-    public void setNome(String nome) {
+    public void setNome(String nome) throws Exception{
+        if(nome.isEmpty() || nome.isBlank()) {
+            throw new Exception("O nome do médico e obrigatorio!");
+        }
         this.nome = nome;
     }
 

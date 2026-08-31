@@ -78,59 +78,117 @@ interpretação e executam diretamente o código otimizado.
 */
 
 public class App {
-    public static void main(String[] args) throws Exception {
+
+    public static String concatenar(String a, String b) {
+        String r = "";
+        try {
+            r = a.toLowerCase() + " " + b.toLowerCase();
+        } catch (Exception err) {
+            r = "frase vazia!!";
+        } finally {
+            return r.toUpperCase();
+        }
         
-        Paciente p1 = new Paciente();
+    }
+    
+    public static void main(String[] args) throws Exception {
+        var p1 = new Paciente();
+        var joao = new Paciente();
+
+        //Paciente p1 = new Paciente();
+        p1.setCodigo(1);
         p1.setNome("Guilherme Leo");
-        p1.setCpf("123.456.789-00");
+        p1.setEmail("go507744@gmail.com");
         p1.setTelefone("(11) 91234-5678");
-        p1.setGenero("Masculino");
+        p1.setGenero('M');
         p1.setIdade(23);
-
-        Medico m1 = new Medico();
-        m1.setNome("Laura Araujo");
-        m1.setCrm("123456-SP");
-        m1.setTelefone("(11) 91234-5678");
-        m1.setEspecialidade("Cardiologia");
-        m1.setSenha("med123");
-
-        Recepcionista r1 = new Recepcionista();
-        r1.setNome("Mariana Lopes");
-        r1.setCpf("987.654.321-11");
-        r1.setTelefone("(11) 95555-4444");
-        r1.setSenha("rec456");
-
-        Agenda a1 = new Agenda();
-        a1.setData("20/08/2026");
-        a1.setHora("14:00");
-        a1.setMedico(m1);
-        a1.setPaciente(p1);
-
-        Consulta c1 = new Consulta();
-        c1.setData("20/08/2026");
-        c1.setHora("14:00");
-        c1.setMedico(m1);
-        c1.setPaciente(p1);
-        c1.setMotivo("Check-up de rotina");
-        c1.setHistorico("Sem queixas anteriores");
-
-        Receita rec1 = new Receita();
-        rec1.setConsulta(c1);
-        rec1.setData("20/08/2026");
-        rec1.setDescritivo("Tomar vitamina D 1x ao dia.");
-
-        Exame e1 = new Exame();
-        e1.setConsulta(c1);
-        e1.setData("20/08/2026");
-        e1.setDescritivo("Hemograma completo");
-
         p1.mostrar();
-        m1.mostrar();
-        r1.mostrar();
-        a1.mostrar();
-        c1.mostrar();
-        rec1.mostrar();
-        e1.mostrar();
+
+        var jose = new Paciente(1, "jose", "j@j.com", 12, 'M');
+        jose.mostrar();
+
+        System.out.println("senha de "+p1.getNome()+": "+p1.getSenha());
+
+        try{
+            var m0 = new Medico("", "", "234234", "otorrino", "123123");
+            m0.mostrar();
+        }catch(Exception e){
+            System.out.println("Ocorreu um erro"+e.getMessage());
+        }
+
+        var m1 = new Medico();
+
+        try{
+            m1.setNome("Laura Araujo");
+            m1.setCrm("123456-SP");
+            m1.setTelefone("(11) 91234-5678");
+            m1.setEspecialidade("Cardiologia");
+            m1.setSenha("med123");
+            m1.mostrar();
+        }catch(Exception e){
+            System.out.println("Ocorreu um erro: "+e.getMessage());
+        }
+
+        //Recepcionista r1 = new Recepcionista();
+        var r1 = new Recepcionista();
+        try{
+            r1.setNome("Mariana Lopes");
+            r1.setCpf("987.654.321-11");
+            r1.setTelefone("(11) 95555-4444");
+            r1.mostrar();
+        }catch(Exception e){
+            System.out.println("ocorreu um erro: "+e.getMessage());
+        }
+        
+
+        //Agenda a1 = new Agenda();
+        var a1 = new Agenda();
+        try{
+            a1.setData("20/08/2026");
+            a1.setHora("14:00");
+            a1.setMedico(m1);
+            a1.setPaciente(joao);
+            a1.mostrar();
+        }catch(Exception e){
+            System.out.println("ocorreu um erro: "+e.getMessage());
+        }
+        
+
+        var c1 = new Consulta();
+        try{
+            c1.setData("20/08/2026");
+            c1.setHora("14:00");
+            c1.setMedico(m1);
+            c1.setPaciente(p1);
+            c1.setMotivo("Check-up de rotina");
+            c1.setHistorico("Sem queixas anteriores");
+            c1.mostrar();
+        }catch (Exception e){
+            System.out.println("ocorreu um erro: "+e.getMessage());
+        }
+        
+
+        var rec1 = new Receita();
+        try{
+            rec1.setConsulta(c1);
+            rec1.setData("20/08/2026");
+            rec1.setDescritivo("Tomar vitamina D 1x ao dia.");
+            rec1.mostrar();
+        }catch (Exception e){
+            System.out.println("ocorreu um erro: "+e.getMessage());
+        }
+        
+
+        var e1 = new Exame();
+        try{
+            e1.setConsulta(c1);
+            e1.setData("20/08/2026");
+            e1.setDescritivo("Hemograma completo");
+            e1.mostrar();
+
+        }catch (Exception e){
+            System.out.println("ocorreu um erro: "+e.getMessage());
+        }
 
     }
 }
