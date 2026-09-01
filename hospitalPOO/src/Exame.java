@@ -1,10 +1,11 @@
 public class Exame {
-    
+
     private Consulta consulta;
     private String data;
     private String descritivo;
-    
-    public Exame(){}
+
+    public Exame() {
+    }
 
     public Exame(Consulta consulta, String data, String descritivo) {
         this.consulta = consulta;
@@ -12,8 +13,7 @@ public class Exame {
         this.descritivo = descritivo;
     }
 
-
-    public void solicitar(){
+    public void solicitar() {
         System.out.println("Solicitando Exame");
     }
 
@@ -24,32 +24,40 @@ public class Exame {
         System.out.println("Descritivo: " + descritivo + "\n");
     }
 
-    
-
     public String getData() {
         return data;
     }
 
-    public void setData(String data) {
-        this.data = data;
+    public void setData(String data) throws Exception {
+        if (data.isBlank() || data.isEmpty()) {
+            throw new Exception("A data precisa ser preenchida!");
+        } else {
+            this.data = data;
+        }
     }
 
     public String getDescritivo() {
         return descritivo;
     }
 
-    public void setDescritivo(String descritivo) {
-        this.descritivo = descritivo;
+    public void setDescritivo(String descritivo) throws Exception {
+        if (descritivo == null) {
+            throw new Exception("Descritivo é obrigatório!");
+        } else {
+            this.descritivo = descritivo;
+        }
     }
 
     public Consulta getConsulta() {
         return consulta;
     }
 
-    public void setConsulta(Consulta consulta) {
-        this.consulta = consulta;
+    public void setConsulta(Consulta consulta) throws Exception {
+        if (consulta == null) {
+            throw new Exception("Consulta é obrigatório!");
+        } else {
+            this.consulta = consulta;
+        }
     }
-
-    
 
 }

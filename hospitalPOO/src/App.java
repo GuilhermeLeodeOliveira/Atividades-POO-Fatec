@@ -77,6 +77,8 @@ interpretação e executam diretamente o código otimizado.
 
 */
 
+import java.util.Locale;
+
 public class App {
 
     public static String concatenar(String a, String b) {

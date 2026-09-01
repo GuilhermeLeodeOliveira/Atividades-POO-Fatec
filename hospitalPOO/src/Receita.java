@@ -12,7 +12,7 @@ public class Receita {
         this.descritivo = descritivo;
     }
 
-    public void preescrever(){
+    public void preescrever() {
         System.out.println("Prescrevendo Receita");
     }
 
@@ -24,31 +24,40 @@ public class Receita {
     }
 
     public Consulta getConsulta() {
+
         return consulta;
     }
 
-    public void setConsulta(Consulta consulta) {
-        this.consulta = consulta;
+    public void setConsulta(Consulta consulta) throws Exception {
+        if (consulta == null) {
+            throw new Exception("Consulta é obrigatória!");
+        } else {
+            this.consulta = consulta;
+        }
     }
 
     public String getData() {
         return data;
     }
 
-    public void setData(String data) {
-        this.data = data;
+    public void setData(String data) throws Exception {
+        if (data.isBlank() || data.isEmpty()) {
+            throw new Exception("A data precisa ser preenchida!");
+        } else {
+            this.data = data;
+        }
     }
 
     public String getDescritivo() {
         return descritivo;
     }
 
-    public void setDescritivo(String descritivo) {
-        this.descritivo = descritivo;
+    public void setDescritivo(String descritivo) throws Exception {
+        if (descritivo == null) {
+            throw new Exception("Descritivo é obrigatório!");
+        } else {
+            this.descritivo = descritivo;
+        }
     }
-
-    
-
-    
 
 }
